@@ -23,11 +23,11 @@ script:
   - docker tag udagram-api-feed nakjemmy/udagram-api-feed:v5
   - docker tag udagram-api-user nakjemmy/udagram-api-user:v5
   - docker tag reverseproxy nakjemmy/reverseproxy:v10
-  - docker tag udagram-frontend nakjemmy/udagram-frontend:v6
+  - docker tag udagram-frontend nakjemmy/udagram-frontend:v7
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push nakjemmy/udagram-api-feed:v5
   - docker push nakjemmy/udagram-api-user:v5
   - docker push nakjemmy/reverseproxy:v10
-  - docker push nakjemmy/udagram-frontend:v6
+  - docker push nakjemmy/udagram-frontend:v7
